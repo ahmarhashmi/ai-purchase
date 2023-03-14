@@ -16,24 +16,24 @@ def model_predictions(input):
        count = 0
        for ent in doc.ents:
            if ent.label_ == "Quantity":
-               product["Quantity"] = ent.text
+               product["quantity"] = ent.text
            elif ent.label_ == "Product":
-               product["Product"] = ent.text
+               product["product"] = ent.text
            elif ent.label_ == "Price":
                if '$' in ent.text:
-                    product["Price"] = ent.text.replace('$',"")
+                    product["price"] = ent.text.replace('$',"")
                else:
-                    product["Price"] = ent.text
+                    product["price"] = ent.text
            elif ent.label_ == "Supplier":
                suppliers = ent.text
            options = list(product.keys())
-           if "Quantity" in options and "Product" in options and "Price" in options:
-               product['Supplier'] = suppliers
+           if "quantity" in options and "product" in options and "price" in options:
+               product['supplier'] = suppliers
                items.append( product)
                product = {}
                count += 1
        for item in items:
-           item['Supplier'] = suppliers
+           item['supplier'] = suppliers
     except Exception as e:
         logging.Logger.error(self=logging.Logger(name='model_predictions'),msg=str(e))
     finally:
