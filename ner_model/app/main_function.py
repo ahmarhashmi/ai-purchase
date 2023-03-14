@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
 
-model = spacy.load('ner_model/app/model/en_pr_vroozi_new')
+model = spacy.load('app/model/en_pr_vroozi_new')
 
 def model_predictions(input):
     items = []
