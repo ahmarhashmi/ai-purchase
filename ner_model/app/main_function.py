@@ -47,7 +47,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Intro": "Model for prediction of Donation amounts of  "}
+    return {"Intro": "Model for prediction of creating purchase request"}
 
 
 @app.post('/predict')
