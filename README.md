@@ -17,10 +17,14 @@ user@user: jupyter notebook
 ```
 
 # Deployment 
-Steps to deploy the model present in the ner_model 
-1) Save the model prepared using training notebook inside app/models directory
-2) Change the directory to ``ner_model`` directory.
-3) Build the docker with follwing command.
+Steps to deploy the model present in the ``ner_model`` 
+1) Save the model prepared using training notebook inside ``app/ner_model/models`` directory
+2) Give the name and path of model in ``app/main_function.py`` inside code
+```angular2html
+model = spacy.load('app/model/en_pr_vroozi_new')
+```
+3) Change the directory to ``ner_model`` directory.
+4) Build the docker with follwing command.
 ```angular2html
 docker build . -t [name]:[version] 
 ```
