@@ -11,7 +11,7 @@ docker build . -t name:version
 ```
 3) Run the docker image with the following command
 ```angular2html
-docker run -d --name name_of_container -p port:port name_of_image:version_of_image
+docker run -d --name name_of_container -p port:80 name_of_image:version_of_image
 ```
 4) Request the POST API using following url :
 ```angular2html
